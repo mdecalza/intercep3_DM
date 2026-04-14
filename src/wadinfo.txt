@@ -2,46 +2,25 @@
 Advanced engine needed  : Engine compatible w/ UMAPINFO, MBF21, & DSDHACKED
 Primary purpose         : Single play + Co-op
 ===========================================================================
-Title                   : Interception III
-Filename                : intercep3.WAD
+Title                   : Interception III Deathmatch
+Filename                : intercep3_DM.WAD
 Release date            : Mnth. Day, Year
 Author                  : The Interceptors
 Other Files By Author   : intercep.wad, intercep2.wad
 Misc. Author Info       : The Interceptors are (in alphabetical order):
-                          AlexEightch (maps, music, testing)
-                          Bendža M. (maps)
-                          Blast98 (maps)
-                          cannonball (map)
+                          AlexEightch (DM lead, maps, testing)
+                          Bendža M. (map)
                           Darman Macray (music)
-                          FlamingoGazzoline (maps, music)
-                          Frank Harper (map)
-                          germicelli (map, music)
-                          Lina (DECOHack, sprites, testing)
-                          Moustachio (project lead, DECOHack, maps, art,
-                           testing)
+                          Lina (DECOHack, sprites)
+                          Moustachio (DM lead, DECOHack, maps, art, testing)
                           PeccatumMihzamiz (ENDOOM)
-                          rafael_farofa (map)
-                          Salmon (map)
-                          sincity2100 (maps)
-                          Treehouseminis (map)
-                          Yisue (map)
 
-Description             : ADD DESCRIPTION HERE
+Description             : Deathmatch wad based on Interception III.
 
 Additional Credits to   : Darman Macray for bespoke title, text, and
                           intermission themes.
 
-                          germicelli and AlexEightch for original music.
-
-                          ForceTheDemo, Snaxalotl, LewkForce, Thyrbse,
-                          James Paddock, Stuart Rynn, Maxime Tondreau,
-                          Rammstein, Brayden Hart, Tristan Clark, and
-                          Korp for music from other sources.
-
                           Lina for detailed feedback on the resource pack.
-
-                          DFF and valkiriforce for feedback during the
-                          planning phase.
 
                           Doomers Board for DBP37 resources.
                           Esselfortium & CC4 Team for cc4-tex.
@@ -51,7 +30,7 @@ Additional Credits to   : Darman Macray for bespoke title, text, and
 ===========================================================================
 * What is included *
 
-New levels              : Number of levels
+New levels              : 4
 Sounds                  : Yes
 Music                   : Yes
 Graphics                : Yes
@@ -64,12 +43,12 @@ Other files required    :
 * Play Information *
 
 Game                    : Doom 2
-Map #                   : EXMY / MAPXX ...
-Single Player           : Designed for
-Cooperative 2-4 Player  : Designed for
-Deathmatch 2-4 Player   : No
+Map #                   : MAP01-MAP04
+Single Player           : No
+Cooperative 2-4 Player  : No
+Deathmatch 2-4 Player   : Designed for
 Other game styles       : 
-Difficulty Settings     : Yes
+Difficulty Settings     : N/A
 
 
 * Construction *

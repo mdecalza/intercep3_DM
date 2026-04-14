@@ -57,7 +57,7 @@ thing 151 "Incendiary shotgun fireball"
 	speed 25
 	radius 13
 	height 8
-	damage 5
+	damage 12
 	painchance 0
 
 	+NOBLOCKMAP

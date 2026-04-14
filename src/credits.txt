@@ -1,7 +1,8 @@
 INTERCEPTION III
 RESOURCE CREDITS
 
-PROJECT LEAD    Moustachio
+DM LEADS    AlexEightch
+            Moustachio
 
 
 -= MUSIC =-

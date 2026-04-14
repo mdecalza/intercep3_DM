@@ -1,0 +1,52 @@
+/*****************************************************************************
+ * DECOHack Patch File
+ * Main
+ * 2024 Matthew DeCalzadilla
+ ****************************************************************************/
+
+#include <dsdhacked>
+#include <friendly>
+
+#include "weapons.dh"
+#include "hazards.dh"
+#include "decoration.dh"
+#include "wildlife.dh"
+
+// make all of the hanging bodies non-solid
+each thing from 129 to 134
+{
+    -SOLID
+    +NOBLOCKMAP
+}
+
+// Player
+thing 1
+{
+	splashgroup 1  // Immune to splash damage from incendiary shells & BFG ball
+}
+
+misc
+{
+	initialBullets 0
+}
+
+// Lower bullet pickups to:
+// 4 per dropped clip
+// 8 per placed clip
+// 40 per box
+ammo 0
+{
+	pickup 8
+}
+
+strings
+{
+	GOTCHAINGUN "You got the super chaingun!"
+	GOTCHAINSAW "You got the Model 64 chainsaw!"
+	GOTSHOTGUN "You got the super slug rifle!"
+	GOTSHOTGUN2 "You got the incendiary shotgun!"
+	GOTPLASMA "You got the unlocked plasma rifle!"
+	GOTBFG9000 "You got the BFG9000.1! Kill 'em all!"
+
+	STSTR_CHOPPERS "Put the devil to work!"
+}

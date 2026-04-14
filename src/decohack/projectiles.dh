@@ -1,0 +1,150 @@
+/*****************************************************************************
+ * DECOHack Patch File
+ * Projectiles
+ * 2024 Matthew DeCalzadilla
+ ****************************************************************************/
+
+#include <dsdhacked>
+
+#include "particles.dh"
+
+/* Doom II projectiles */
+
+// Plasma projectile
+thing 35
+{
+	damage 8
+}
+
+// BFG projectile
+thing 36
+{
+	damage 125
+
+	// MBF21 Properties (MBF21 feature set and later)
+	splashgroup 1
+}
+
+// BFG impact
+thing 43
+{
+	splashgroup 1
+}
+
+// BFG ball gives splash damage and spawns particles
+state 115
+{
+	BFS1 A 4 Bright A_RadiusDamage(64, 1024)
+}
+
+// BFG collision gives splash damage
+state 117
+{
+	BFE1 A 8 Bright A_RadiusDamage(128, 512)
+}
+
+// BFG tracers give splash damage
+state 123
+{
+	BFE2 A 8 Bright A_RadiusDamage(48, 128)
+}
+
+/* New projectiles */
+
+thing 151 "Incendiary shotgun fireball"
+{
+	health 1000
+	speed 25
+	radius 13
+	height 8
+	damage 5
+	painchance 0
+
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+DROPOFF
+	+MISSILE
+
+	// MBF21 Properties (MBF21 feature set and later)
+	splashgroup 1
+
+	deathsound "FIRXPL"
+
+	States
+	{
+		Spawn:
+			SP20 A 1 Bright
+			SP20 A 4 Bright {
+				A_PlaySound("FIRSHT")
+				A_RadiusDamage(80, 56)
+			}
+			SP20 B 5 Bright {
+				A_RadiusDamage(76, 56)
+				A_AddFlags(TRANSLUCENT)
+			}
+			SP20 C 5 Bright A_RadiusDamage(68, 56)
+			SP20 D 5 Bright A_RadiusDamage(60, 56)
+			Stop
+		Death:
+			BAL1 C 8 Bright {
+				A_RadiusDamage(100, 64)
+				A_Scream
+			}
+			BAL1 D 6 Bright
+			BAL1 E 4 Bright
+			Stop
+	}
+}
+
+thing 153 "Arrow"
+{
+	health 20
+	speed 25
+	radius 13
+	height 8
+	mass 250
+	damage 3
+	painchance 0
+
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+DROPOFF
+	+MISSILE
+
+	deathsound "FRE031"
+
+	States
+	{
+		Spawn:
+			SP00 A -1
+			Stop
+		Death:
+			SP00 B 4 A_Scream
+			SP00 CDE 4
+			Stop
+	}
+}
+
+thing 287 : thing 34 "Nitro rocket"
+{
+	speed 25
+
+	States
+	{
+		Spawn:
+			NMSL A 1 Bright
+			NMSL A 4 Bright A_SpawnObject(259, 0.0, -20.0, 0.0, 6.0, 8.0)
+			Loop
+		Death:
+			MISL B 8 Bright A_RadiusDamage(192, 128)
+			MISL C 6 Bright
+			MISL D 4 Bright
+			Stop
+	}
+}
+
+thing 289 : thing 287 "Rocket zombie rocket"
+{
+	// MBF21 Properties (MBF21 feature set and later)
+	splashgroup 3
+}

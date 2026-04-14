@@ -1,0 +1,18 @@
+{
+  "type": "gameconf",
+  "version": "1.0.0",
+  "metadata": { },
+  "data":
+  {
+    "title": "Interception III Deathmatch",
+    "author": "The Interceptors",
+    "description": "Deathmatch wad based on Interception III.",
+    "version": "0.1",
+    "iwad": "doom2.wad",
+    "pwadfiles": null,
+    "dehfiles": null,
+    "executable": "dontuploadourshit",
+	"mode": "commercial",
+    "options": null
+  }
+}

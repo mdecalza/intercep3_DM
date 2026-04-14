@@ -1,0 +1,2200 @@
+/*****************************************************************************
+ * DECOHack Patch File
+ * Decoration,  obstacle,  & other editor objects
+ * 2024 Matthew DeCalzadilla
+ ****************************************************************************/
+
+#include <dsdhacked>
+
+/* Doom II decorations */
+
+// Barrel
+thing 31
+{
+	painchance 256
+
+	painsound "FRE007"
+
+	States
+	{
+		Pain:
+			BAR1 A 0 A_Pain
+			Goto Spawn
+	}
+}
+
+thing 80 "Tall techno floor lamp"
+{
+	height 80
+}
+
+thing 81 "Short techno floor lamp"
+{
+	height 60
+}
+
+thing 82 "Floor lamp"
+{
+	height 48
+}
+
+thing 125 "Impaled human"
+{
+	health 20
+	radius 16
+	height 56
+	mass 100000
+
+	+SHOOTABLE
+
+	// Extended Properties (Extended/DEHEXTRA feature set and later)
+	dropitem 64  // Drops bullets on death
+
+	States
+	{
+		Death:
+			POL1 CDEF 4
+			POL1 G -1
+			Stop
+		XDeath:
+			POL1 H 4
+			POL1 I 4 A_XScream
+			POL1 JKLMNO 4
+			POL1 P -1
+			Stop
+	}
+}
+
+thing 126 "Twitching impaled human"
+{
+	health 20
+	radius 16
+	height 56
+	mass 100000
+	painchance 256
+
+	+SHOOTABLE
+
+	painsound "POPAIN"
+	deathsound "PODTH3"
+
+	// Extended Properties (Extended/DEHEXTRA feature set and later)
+	dropitem 64  // Drops bullets on death
+
+	States
+	{
+		Pain:
+			POL6 B 0 A_Pain
+			Goto Spawn
+		Death:
+			POL6 C 4
+			POL6 D 4 A_Scream
+			POL6 EF 4
+			POL6 G -1
+			Stop
+		XDeath:
+			POL6 H 4
+			POL6 I 4 A_XScream
+			POL6 JKLMNO 4
+			POL6 P -1
+			Stop
+	}
+}
+
+/* New decorations */
+
+// thing 151 defined in projectiles.dh
+
+thing 152 "Fire pit"
+{
+	//$category Light sources
+	ednum 6001
+
+	radius 16
+	height 16
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP01 ABC 4 Bright
+			Loop
+	}
+}
+
+// thing 153 defined in projectiles.dh
+
+thing 154 "Tall floor lamp"
+{
+	//$category Light sources
+	ednum 6003
+
+	radius 16
+	height 80
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP03 A -1 Bright
+			Stop
+	}
+}
+
+thing 155 "Techbase lamp"
+{
+	//$category Light sources
+	ednum 6004
+
+	radius 16
+	height 60
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP04 A -1 Bright
+			Stop
+	}
+}
+
+thing 156 "Short techno floor lamp 2"
+{
+	//$category Light sources
+	ednum 6005
+
+	radius 16
+	height 60
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP05 A -1 Bright
+			Stop
+	}
+}
+
+thing 157 "Chandelier"
+{
+	//$category Light sources
+	ednum 6006
+
+	radius 16
+	height 0
+
+	+NOBLOCKMAP
+	+SPAWNCEILING
+	+NOGRAVITY
+
+	States
+	{
+		Spawn:
+			SP06 ABCDEFGH 4 Bright
+			Loop
+	}
+}
+
+thing 158 "Tall hanging techno lamp"
+{
+	//$category Light sources
+	ednum 6007
+
+	radius 16
+	height 0
+
+	+NOBLOCKMAP
+	+SPAWNCEILING
+	+NOGRAVITY
+
+	States
+	{
+		Spawn:
+			SP07 ABCD 4 Bright
+			Loop
+	}
+}
+
+thing 159 "Short hanging techno lamp"
+{
+	//$category Light sources
+	ednum 6008
+
+	radius 16
+	height 0
+
+	+NOBLOCKMAP
+	+SPAWNCEILING
+	+NOGRAVITY
+
+	States
+	{
+		Spawn:
+			SP08 ABCD 4 Bright
+			Loop
+	}
+}
+
+thing 160 "Chandelier 2"
+{
+	//$category Light sources
+	ednum 6009
+
+	radius 16
+	height 0
+
+	+NOBLOCKMAP
+	+SPAWNCEILING
+	+NOGRAVITY
+
+	States
+	{
+		Spawn:
+			SP09 A -1 Bright
+			Stop
+	}
+}
+
+thing 161 "Large brown tree 2"
+{
+	//$category Decoration/Nature
+	ednum 6010
+
+	radius 16
+	height 108
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP10 A -1
+			Stop
+	}
+}
+
+thing 162 "Burned-down tree"
+{
+	//$category Decoration/Nature
+	ednum 6011
+
+	radius 16
+	height 60
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP11 A -1
+			Stop
+	}
+}
+
+thing 163 "Hell tree"
+{
+	//$category Decoration/Hell
+	ednum 6012
+
+	radius 16
+	height 108
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP12 A -1
+			Stop
+	}
+}
+
+thing 164 "Hanging vine"
+{
+	//$category Decoration/Nature
+	ednum 6013
+
+	radius 16
+	height 0
+
+	+NOBLOCKMAP
+	+SPAWNCEILING
+	+NOGRAVITY
+
+	States
+	{
+		Spawn:
+			SP13 A -1
+			Stop
+	}
+}
+
+thing 165 "Hanging vine 2"
+{
+	//$category Decoration/Nature
+	ednum 6014
+
+	radius 16
+	height 0
+
+	+NOBLOCKMAP
+	+SPAWNCEILING
+	+NOGRAVITY
+
+	States
+	{
+		Spawn:
+			SP14 A -1
+			Stop
+	}
+}
+
+thing 166 "Lava cauldron"
+{
+	//$category Hazards
+	ednum 6015
+
+	radius 24
+	height 24
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP15 ABC 16 Bright
+			Loop
+	}
+}
+
+thing 167 "Red vase"
+{
+	//$category Decoration/Castle
+	ednum 6016
+
+	radius 16
+	height 32
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP16 A -1
+			Stop
+	}
+}
+
+thing 168 "Large brown tree with skulls"
+{
+	//$category Decoration/Hell
+	ednum 6017
+
+	radius 32
+	height 16
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP17 A -1
+			Stop
+	}
+}
+
+thing 169 "Hanging skull lamp"
+{
+	//$category Light sources
+	ednum 6018
+
+	radius 16
+	height 0
+
+	+NOBLOCKMAP
+	+SPAWNCEILING
+	+NOGRAVITY
+
+	States
+	{
+		Spawn:
+			SP18 ABCD 4 Bright
+			Loop
+	}
+}
+
+thing 170 "Crystal ball on column"
+{
+	//$category Decoration/Castle
+	ednum 6019
+
+	radius 16
+	height 60
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP19 A -1
+			Stop
+	}
+}
+
+thing 172 "Brown and gray tree"
+{
+	//$category Decoration/Nature
+	ednum 6021
+
+	radius 16
+	height 160
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP21 A -1
+			Stop
+	}
+}
+
+thing 173 "Brown and gray tree 2"
+{
+	//$category Decoration/Nature
+	ednum 6022
+
+	radius 16
+	height 160
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP22 A -1
+			Stop
+	}
+}
+
+thing 174 "Mossy tree"
+{
+	//$category Decoration/Nature
+	ednum 6023
+
+	radius 16
+	height 160
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP23 A -1
+			Stop
+	}
+}
+
+thing 175 "Mossy tree 2"
+{
+	//$category Decoration/Nature
+	ednum 6024
+
+	radius 16
+	height 108
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP24 A -1
+			Stop
+	}
+}
+
+thing 176 "Mossy log"
+{
+	//$category Decoration/Nature
+	ednum 6025
+
+	radius 16
+	height 16
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP25 A -1
+			Stop
+	}
+}
+
+thing 177 "Mossy stump"
+{
+	//$category Decoration/Nature
+	ednum 6026
+
+	radius 16
+	height 32
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP26 A -1
+			Stop
+	}
+}
+
+thing 178 "Mossy roots"
+{
+	//$category Decoration/Nature
+	ednum 6027
+
+	radius 16
+	height 48
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP27 A -1
+			Stop
+	}
+}
+
+thing 179 "Stalagmite skulls"
+{
+	//$category Decoration/Hell
+	ednum 6028
+
+	radius 16
+	height 64
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP28 A -1
+			Stop
+	}
+}
+
+thing 180 "Brown and gray tree 3"
+{
+	//$category Decoration/Nature
+	ednum 6029
+
+	radius 16
+	height 160
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP29 A -1
+			Stop
+	}
+}
+
+thing 181 "Safety cone"
+{
+	//$category Decoration/Urban
+	ednum 6030
+
+	radius 16
+	height 32
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP30 A -1
+			Stop
+	}
+}
+
+thing 182 "Office chair"
+{
+	//$category Decoration/Urban
+	ednum 6031
+
+	health 20
+	radius 16
+	height 32
+	painchance 256
+	mass 75
+
+	+SOLID
+	+NOBLOOD
+	+SHOOTABLE
+
+	deathsound "FRE040"
+
+	States
+	{
+		Spawn:
+			SP31 A -1
+			Stop
+		Pain:
+			SP31 A 1
+			Goto Spawn
+		Death:
+			SP31 A 2 A_Scream
+			SP31 B 0 A_Fall
+			SP31 B -1
+			Stop
+	}
+}
+
+thing 183 "Toilet"
+{
+	//$category Decoration/Urban
+	ednum 6032
+
+	health 35
+	radius 16
+	height 32
+	painchance 256
+	mass 100000
+
+	+SOLID
+	+NOBLOOD
+	+SHOOTABLE
+
+	deathsound "FRE002"
+	painsound "FRE005"
+
+	States
+	{
+		Spawn:
+			SP32 A -1
+			Stop
+		Pain:
+			SP32 A 0 A_Pain
+			Goto Spawn
+		Death:
+			SP32 B 4 {
+				A_Scream
+				A_Fall
+			}
+			SP32 CDEF 4
+			Goto DeadLoop
+		DeadLoop:
+			SP32 GHIJ 4
+			Loop
+	}
+}
+
+thing 184 "Czech hedgehog"
+{
+	//$category Decoration/Urban
+	ednum 6033
+
+	radius 16
+	height 32
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP33 A -1
+			Stop
+	}
+}
+
+thing 185 "Bloody hanging hook"
+{
+	//$category Decoration/Hell
+	ednum 6034
+
+	radius 16
+	height 0
+
+	+NOBLOCKMAP
+	+SPAWNCEILING
+	+NOGRAVITY
+
+	States
+	{
+		Spawn:
+			SP34 A -1
+			Stop
+	}
+}
+
+thing 186 "Short hedge bush"
+{
+	//$category Decoration/Urban
+	ednum 6035
+
+	radius 16
+	height 60
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP35 A -1
+			Stop
+	}
+}
+
+thing 187 "Large green tree"
+{
+	//$category Decoration/Nature
+	ednum 6036
+
+	radius 16
+	height 100
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP36 A -1
+			Stop
+	}
+}
+
+thing 188 "Fire hydrant"
+{
+	//$category Decoration/Urban
+	ednum 6037
+
+	health 50
+	radius 16
+	height 24
+	painchance 256
+	mass 100000
+
+	+SOLID
+	+NOBLOOD
+	+SHOOTABLE
+
+	deathsound "FRE002"
+	painsound "FRE031"
+
+	States
+	{
+		Spawn:
+			SP37 A -1
+			Stop
+		Pain:
+			SP37 A 0 A_Pain
+			Goto Spawn
+		Death:
+			SP37 B 4 {
+				A_Scream
+				A_Fall
+			}
+			SP37 CD 4
+			Goto DeadLoop
+		DeadLoop:
+			SP37 EFGH 4
+			Loop
+	}
+}
+
+thing 189 "Street lamp"
+{
+	//$category Light sources
+	ednum 6038
+
+	radius 16
+	height 80
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP38 A -1
+			Stop
+	}
+}
+
+thing 190 "Hanging lamp"
+{
+	//$category Light sources
+	ednum 6039
+
+	radius 16
+	height 0
+
+	+NOBLOCKMAP
+	+SPAWNCEILING
+	+NOGRAVITY
+
+	States
+	{
+		Spawn:
+			SP39 A -1
+			Stop
+	}
+}
+
+thing 191 "Construction light"
+{
+	//$category Decoration/Urban
+	ednum 6040
+
+	radius 16
+	height 108
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP40 A -1 Bright
+			Stop
+	}
+}
+
+thing 192 "Construction light 2"
+{
+	//$category Decoration/Urban
+	ednum 6041
+
+	radius 16
+	height 32
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP41 A -1 Bright
+			Stop
+	}
+}
+
+thing 193 "Blinking ceiling lamp"
+{
+	//$category Light sources
+	ednum 6042
+
+	radius 16
+	height 0
+
+	+NOBLOCKMAP
+	+SPAWNCEILING
+	+NOGRAVITY
+
+	States
+	{
+		Spawn:
+			SP42 A 31
+			SP42 B 4 Bright
+			Loop
+	}
+}
+
+thing 194 "Glass techno column"
+{
+	//$category Decoration/Urban
+	ednum 6043
+
+	health 30
+	radius 16
+	height 128
+	painchance 256
+	mass 100000
+
+	+SOLID
+	+NOBLOOD
+	+SHOOTABLE
+
+	deathsound "FRE006"
+	painsound "FRE005"
+
+	States
+	{
+		Spawn:
+			SP43 A 31
+			SP43 B 4 Bright
+			Loop
+		Pain:
+			SP43 A 0 A_Pain
+			Goto Spawn
+		Death:
+			SP43 C 0 A_Scream
+			Goto DeadLoop
+		DeadLoop:
+			SP43 C 31
+			SP43 D 4 Bright
+			Loop
+	}
+}
+
+thing 195 "Dead scientist 1"
+{
+	//$category Decoration/Dead
+	ednum 6044
+
+	radius 16
+	height 16
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP44 A -1
+			Stop
+	}
+}
+
+thing 196 "Dead scientist 2"
+{
+	//$category Decoration/Dead
+	ednum 6045
+
+	radius 16
+	height 16
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP45 A -1
+			Stop
+	}
+}
+
+thing 197 "Dead admiral"
+{
+	//$category Decoration/Dead
+	ednum 6046
+
+	radius 16
+	height 16
+
+	+NOBLOCKMAP
+
+	States
+	{
+		Spawn:
+			SP46 A -1
+			Stop
+	}
+}
+
+thing 198 "Marine helmet"
+{
+	//$category Decoration/Urban
+	ednum 6047
+
+	radius 16
+	height 16
+
+	+NOBLOCKMAP
+
+	States
+	{
+		Spawn:
+			SP47 A -1
+			Stop
+	}
+}
+
+thing 199 "Orange marine suit"
+{
+	//$category Decoration/Urban
+	ednum 6048
+
+	radius 16
+	height 16
+
+	+NOBLOCKMAP
+
+	States
+	{
+		Spawn:
+			SP48 A -1
+			Stop
+	}
+}
+
+thing 200 "Green marine suit"
+{
+	//$category Decoration/Urban
+	ednum 6049
+
+	radius 16
+	height 16
+
+	+NOBLOCKMAP
+
+	States
+	{
+		Spawn:
+			SP49 A -1
+			Stop
+	}
+}
+
+thing 201 "Large icy stalagmite"
+{
+	//$category Decoration/Nature
+	ednum 6050
+
+	radius 24
+	height 128
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP50 A -1
+			Stop
+	}
+}
+
+thing 202 "Short icy stalagmite"
+{
+	//$category Decoration/Nature
+	ednum 6051
+
+	radius 16
+	height 48
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP51 A -1
+			Stop
+	}
+}
+
+thing 203 "Short icy stalagmite 2"
+{
+	//$category Decoration/Nature
+	ednum 6052
+
+	radius 16
+	height 56
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP52 A -1
+			Stop
+	}
+}
+
+thing 204 "Large crystal"
+{
+	//$category Decoration/Nature
+	ednum 6053
+
+	radius 16
+	height 77
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP53 A -1
+			Stop
+	}
+}
+
+thing 205 "Ceiling crystal"
+{
+	//$category Decoration/Nature
+	ednum 6054
+
+	radius 16
+	height 0
+
+	+NOBLOCKMAP
+	+SPAWNCEILING
+	+NOGRAVITY
+
+	States
+	{
+		Spawn:
+			SP54 A -1
+			Stop
+	}
+}
+
+// thing 206 defined in enemies.dh
+
+// thing 207 defined in cutscenes.dh
+
+// thing 208 defined in enemies.dh
+
+thing 209 "Brown fleshy mass"
+{
+	//$category Decoration/Hell
+	ednum 6058
+
+	radius 24
+	height 40
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP58 A -1
+			Stop
+	}
+}
+
+thing 210 "Red fleshy mass"
+{
+	//$category Decoration/Hell
+	ednum 6059
+
+	radius 24
+	height 40
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP59 A -1
+			Stop
+	}
+}
+
+thing 211 "Green marble column"
+{
+	//$category Decoration/Castle
+	ednum 6060
+
+	radius 16
+	height 120
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP60 A -1
+			Stop
+	}
+}
+
+thing 212 "Gray (grey) marble column"
+{
+	//$category Decoration/Castle
+	ednum 6061
+
+	radius 16
+	height 120
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP61 A -1
+			Stop
+	}
+}
+
+thing 213 "Spiral marble column"
+{
+	//$category Decoration/Castle
+	ednum 6062
+
+	radius 16
+	height 72
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP62 A -1
+			Stop
+	}
+}
+
+thing 214 "Tall metal pipe"
+{
+	//$category Decoration/Urban
+	ednum 6063
+
+	radius 16
+	height 128
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP63 A -1
+			Stop
+	}
+}
+
+thing 215 "Tall metal pipe 2"
+{
+	//$category Decoration/Urban
+	ednum 6064
+
+	radius 16
+	height 128
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP64 A -1
+			Stop
+	}
+}
+
+thing 216 "Extra tall column"
+{
+	//$category Decoration/Castle
+	ednum 6065
+
+	radius 16
+	height 180
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP65 A -1
+			Stop
+	}
+}
+
+thing 217 "Tall destroyed column"
+{
+	//$category Decoration/Castle
+	ednum 6066
+
+	radius 16
+	height 100
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP66 A -1
+			Stop
+	}
+}
+
+thing 218 "Short destroyed column"
+{
+	//$category Decoration/Castle
+	ednum 6067
+
+	radius 16
+	height 60
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP67 A -1
+			Stop
+	}
+}
+
+// thing 219 defined in hazards.dh
+
+thing 220 "Demon statue"
+{
+	//$category Decoration/Castle
+	ednum 6069
+
+	radius 16
+	height 108
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP69 A -1
+			Stop
+	}
+}
+
+thing 221 "Splayed marine"
+{
+	//$category Decoration/Dead
+	ednum 6070
+
+	radius 16
+	height 16
+
+	+NOBLOCKMAP
+
+	States
+	{
+		Spawn:
+			SP70 A -1
+			Stop
+	}
+}
+
+thing 222 "Impaled marine"
+{
+	//$category Decoration/Dead
+	ednum 6071
+
+	radius 16
+	height 64
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP71 A -1
+			Stop
+	}
+}
+
+thing 223 "Hanging imp (no jaw)"
+{
+	//$category Decoration/Dead
+	ednum 6072
+
+	radius 16
+	height 0
+
+	+NOBLOCKMAP
+	+SPAWNCEILING
+	+NOGRAVITY
+
+	States
+	{
+		Spawn:
+			SP72 A -1
+			Stop
+	}
+}
+
+thing 224 "Impaled marine head"
+{
+	//$category Decoration/Dead
+	ednum 6073
+
+	radius 16
+	height 56
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP73 A -1
+			Stop
+	}
+}
+
+thing 225 "Impaled cyberdemon head"
+{
+	//$category Decoration/Dead
+	ednum 6074
+
+	radius 16
+	height 56
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP74 A -1
+			Stop
+	}
+}
+
+thing 226 "Large pile of corpses"
+{
+	//$category Decoration/Dead
+	ednum 6075
+
+	radius 16
+	height 64
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP75 A -1
+			Stop
+	}
+}
+
+thing 227 "Large pile of bones"
+{
+	//$category Decoration/Dead
+	ednum 6076
+
+	radius 16
+	height 16
+
+	+NOBLOCKMAP
+
+	States
+	{
+		Spawn:
+			SP76 A -1
+			Stop
+	}
+}
+
+thing 228 "Hanging baron"
+{
+	//$category Decoration/Dead
+	ednum 6077
+
+	radius 16
+	height 0
+
+	+NOBLOCKMAP
+	+SPAWNCEILING
+	+NOGRAVITY
+
+	States
+	{
+		Spawn:
+			SP77 A -1
+			Stop
+	}
+}
+
+thing 229 "Small fleshy mass"
+{
+	//$category Decoration/Hell
+	ednum 6078
+
+	radius 16
+	height 16
+
+	+NOBLOCKMAP
+
+	States
+	{
+		Spawn:
+			SP78 A -1
+			Stop
+	}
+}
+
+thing 230 "Burning sacrifice"
+{
+	//$category Decoration/Dead
+	ednum 6079
+
+	radius 16
+	height 100
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP79 ABCD 4 Bright
+			Loop
+	}
+}
+
+thing 231 "Tall red banner"
+{
+	//$category Decoration/Castle
+	ednum 6080
+
+	radius 16
+	height 128
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP80 A -1
+			Stop
+	}
+}
+
+thing 232 "Tall green banner"
+{
+	//$category Decoration/Castle
+	ednum 6081
+
+	radius 16
+	height 128
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SP81 A -1
+			Stop
+	}
+}
+
+thing 233 "Seaweed"
+{
+	//$category Decoration/Nature
+	ednum 6082
+
+	radius 16
+	height 16
+
+	+NOBLOCKMAP
+
+	States
+	{
+		Spawn:
+			SP82 AB 16
+			Loop
+	}
+}
+
+thing 234 "Big glowing mushroom"
+{
+	//$category Decoration/Nature
+	ednum 6083
+
+	radius 16
+	height 16
+
+	+NOBLOCKMAP
+
+	States
+	{
+		Spawn:
+			SP83 A -1 Bright
+			Stop
+	}
+}
+
+thing 235 "Small glowing mushroom"
+{
+	//$category Decoration/Nature
+	ednum 6084
+
+	radius 16
+	radius 16
+
+	+NOBLOCKMAP
+
+	States
+	{
+		Spawn:
+			SP84 A -1 Bright
+			Stop
+	}
+}
+
+thing 236 "Gray (grey) rock"
+{
+	//$category Decoration/Nature
+	ednum 6085
+
+	radius 16
+	height 16
+
+	+NOBLOCKMAP
+
+	States
+	{
+		Spawn:
+			SP85 A -1
+			Stop
+	}
+}
+
+thing 237 "Brown rock"
+{
+	//$category Decoration/Nature
+	ednum 6086
+
+	radius 16
+	height 16
+
+	+NOBLOCKMAP
+
+	States
+	{
+		Spawn:
+			SP86 A -1
+			Stop
+	}
+}
+
+// thing 238 defined in hazards.dh
+
+thing 239 "Box"
+{
+	//$category Decoration/Urban
+	ednum 6088
+
+	radius 16
+	height 16
+
+	+NOBLOCKMAP
+
+	States
+	{
+		Spawn:
+			SP88 A -1
+			Stop
+	}
+}
+
+thing 240 "Trash bin"
+{
+	//$category Lootable
+	ednum 6089
+
+	health 30
+	radius 10
+	height 40
+	painchance 256
+	mass 45
+
+	+SOLID
+	+NOBLOOD
+	+SHOOTABLE
+
+	deathsound "FRE032"
+	painsound "FRE007"
+
+	States
+	{
+		Spawn:
+			SP89 A -1
+			Stop
+		Pain:
+			SP89 A 2 A_Pain
+			Goto Spawn
+		Death:
+			SP89 B 8 A_Scream
+			SP89 C 8 {
+				A_Fall
+				A_RandomJump(SpawnShells, 160)  // 62.5% chance
+				A_RandomJump(SpawnClip, 128)  // 50% chance
+				A_RandomJump(SpawnCell, 90)  // ~35% chance
+				A_RandomJump(SpawnStimpack, 77)  // ~30% chance
+				A_RandomJump(SpawnMedikit, 51)  // ~20% chance
+				A_RandomJump(SpawnShellBox, 38)  // ~15% chance
+				A_RandomJump(SpawnRocket, 31)  // ~12% chance
+				A_RandomJump(SpawnAmmoBox, 26)  // ~10% chance
+				A_RandomJump(SpawnBackpack, 26)  // ~10% chance
+				A_RandomJump(SpawnRocketBox, 20)  // ~8% chance
+				A_RandomJump(SpawnCellPack, 10)  // ~4% chance
+				A_RandomJump(SpawnMegaarmor, 1)  // ~0.4% chance
+				A_SpawnObject(229, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10.0)  // Spawns rotten flesh if all rolls fail
+			}
+			Goto FinishDeath
+		SpawnShells:
+			SP89 C 0 A_SpawnObject(70, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10.0)
+			Goto FinishDeath
+		SpawnClip:
+			SP89 C 0 A_SpawnObject(64, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10.0)
+			Goto FinishDeath
+		SpawnCell:
+			SP89 C 0 A_SpawnObject(68, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10.0)
+			Goto FinishDeath
+		SpawnStimpack:
+			SP89 C 0 A_SpawnObject(54, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10.0)
+			Goto FinishDeath
+		SpawnMedikit:
+			SP89 C 0 A_SpawnObject(55, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10.0)
+			Goto FinishDeath
+		SpawnShellBox:
+			SP89 C 0 A_SpawnObject(71, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10.0)
+			Goto FinishDeath
+		SpawnRocket:
+			SP89 C 0 A_SpawnObject(66, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10.0)
+			Goto FinishDeath
+		SpawnAmmoBox:
+			SP89 C 0 A_SpawnObject(65, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10.0)
+			Goto FinishDeath
+		SpawnBackpack:
+			SP89 C 0 A_SpawnObject(72, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10.0)
+			Goto FinishDeath
+		SpawnRocketBox:
+			SP89 C 0 A_SpawnObject(67, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10.0)
+			Goto FinishDeath
+		SpawnCellPack:
+			SP89 C 0 A_SpawnObject(69, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10.0)
+			Goto FinishDeath
+		SpawnMegaarmor:
+			SP89 C 0 A_SpawnObject(45, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 10.0)
+			Goto FinishDeath
+		FinishDeath:
+			SP89 D 6
+			SP89 E -1
+	}
+}
+
+// things 241, 246 defined in hazards.dh
+
+// things 242-245, 247-248 defined in enemies.dh
+
+// things 249-267 defined in particles.dh
+
+// things 268-271 defined in wildlife.dh
+
+thing 272 "Blue marble column"
+{
+	//$category Decoration/Castle
+	ednum 6100
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SPA4 A -1
+			Stop
+	}
+}
+
+thing 273 "Tall blue pillar"
+{
+	//$category Obstacles
+	ednum 6101
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SPA5 A -1
+			Stop
+	}
+}
+
+thing 274 "Short blue pillar"
+{
+	//$category Obstacles
+	ednum 6102
+	States
+	{
+		Spawn:
+			SPA6 A -1
+			Stop
+	}
+}
+
+thing 275 "Short blue pillar (skull)"
+{
+	//$category Obstacles
+	ednum 6103
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SPA7 A -1
+			Stop
+	}
+}
+
+thing 276 "Short clay pot"
+{
+	//$category Decoration/Castle
+	ednum 6104
+
+	radius 16
+	height 24
+
+	+NOBLOCKMAP
+
+	States
+	{
+		Spawn:
+			SPA8 A -1
+			Stop
+	}
+}
+
+thing 277 "Tall clay pot"
+{
+	//$category Decoration/Castle
+	ednum 6105
+
+	radius 16
+	height 32
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SPA9 A -1
+			Stop
+	}
+}
+
+thing 278 "Hanging gray (grey) stalactite"
+{
+	//$category Decoration/Nature
+	ednum 6106
+
+	radius 16
+	height 0
+
+	+SPAWNCEILING
+	+NOBLOCKMAP
+	+NOGRAVITY
+
+	States
+	{
+		Spawn:
+			SPB1 A -1
+			Stop
+	}
+}
+
+thing 279 "Gray (grey) stalagmite"
+{
+	//$category Decoration/Nature
+	ednum 6107
+
+	radius 16
+	height 40
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SPB0 A -1
+			Stop
+	}
+}
+
+thing 290 "Parking meter"
+{
+	//$category Decoration/Urban
+	ednum 6098
+
+	radius 7
+	height 56
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SPB2 A -1
+			Stop
+	}
+}
+
+thing 291 "Fire extinguisher"
+{
+	//$category Decoration/Urban
+	ednum 6099
+
+	health 15
+	radius 6
+	height 56
+	painchance 256
+	mass 10000
+
+	+SOLID
+	+NOBLOOD
+	+SHOOTABLE
+
+	painsound "FRE007"
+	deathsound "BAREXP"
+
+	States
+	{
+		Spawn:
+			SPB3 A -1
+			Stop
+		Pain:
+			SPB3 A 0 A_Pain
+			Goto Spawn
+		Death:
+			SPB3 B 5 Bright
+			SPB3 B 5 Bright A_Scream
+			SPB3 C 5 Bright
+			SPB3 D 10 Bright A_RadiusDamage(128, 72)
+			SPB3 E 10 Bright
+			Stop
+	}
+}
+
+thing 292 "Drink glass"
+{
+	//$category Decoration/Urban
+	ednum 6108
+
+	radius 8
+	height 14
+
+	+NOBLOCKMAP
+
+	States
+	{
+		Spawn:
+			SPB4 A -1
+			Stop
+	}
+}
+
+thing 293 "Small bottle"
+{
+	//$category Decoration/Urban
+	ednum 6109
+
+	radius 8
+	height 14
+
+	+NOBLOCKMAP
+
+	States
+	{
+		Spawn:
+			SPB5 A -1
+			Stop
+	}
+}
+
+thing 294 "Large bottle"
+{
+	//$category Decoration/Urban
+	ednum 6110
+
+	radius 8
+	height 24
+
+	+NOBLOCKMAP
+
+	States
+	{
+		Spawn:
+			SPB6 A -1
+			Stop
+	}
+}
+
+thing 295 "Large bottle 2"
+{
+	//$category Decoration/Urban
+	ednum 6111
+
+	radius 8
+	height 24
+
+	+NOBLOCKMAP
+
+	States
+	{
+		Spawn:
+			SPB7 A -1
+			Stop
+	}
+}
+
+thing 296 "Pill bottle"
+{
+	//$category Decoration/Urban
+	ednum 6112
+
+	radius 8
+	height 12
+
+	+NOBLOCKMAP
+
+	States
+	{
+		Spawn:
+			SPB8 A -1
+			Stop
+	}
+}
+
+thing 297 "Small bag"
+{
+	//$category Decoration/Castle
+	ednum 6113
+
+	radius 8
+	height 16
+
+	+NOBLOCKMAP
+
+	States
+	{
+		Spawn:
+			SPB9 A -1
+			Stop
+	}
+}
+
+thing 298 "Coffee cup"
+{
+	//$category Decoration/Urban
+	ednum 6114
+
+	radius 8
+	height 7
+
+	+NOBLOCKMAP
+
+	States
+	{
+		Spawn:
+			SPC0 A 1
+			SPC0 A 0 A_JumpIfFlagsSet(Alt, AMBUSH)
+			SPC0 A -1
+			Stop
+		Alt:
+			SPC1 A -1
+			Stop
+	}
+}
+
+thing 299 "Desk lamp"
+{
+	//$category Decoration/Urban
+	ednum 6115
+
+	radius 16
+	height 24
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SPC2 A -1 Bright
+			Stop
+	}
+}
+
+thing 300 "Small candelabra"
+{
+	//$category Decoration/Castle
+	ednum 6116
+
+	radius 16
+	height 24
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SPC3 A 5 Bright
+			SPC3 B 5 Bright
+			SPC3 C 5 Bright
+			Loop
+	}
+}
+
+thing 301 "Wet floor sign"
+{
+	//$category Decoration/Urban
+	ednum 6117
+
+	radius 8
+	height 20
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SPC4 A -1
+			Stop
+	}
+}
+
+thing 302 "Bar stool"
+{
+	//$category Decoration/Urban
+	ednum 6118
+
+	radius 8
+	height 24
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SPC5 A -1
+			Stop
+	}
+}
+
+thing 303 "Mop in bucket"
+{
+	//$category Decoration/Urban
+	ednum 6119
+
+	radius 12
+	height 56
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SPC6 A -1
+			Stop
+	}
+}
+
+thing 304 "Small fountain"
+{
+	//$category Decoration/Castle
+	ednum 6120
+
+	radius 24
+	height 24
+
+	+SOLID
+
+	States
+	{
+		Spawn:
+			SPC7 ABCD 4
+			Loop
+	}
+}

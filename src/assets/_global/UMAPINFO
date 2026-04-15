@@ -3,6 +3,7 @@ map MAP01
 	levelname = "The Void Hates You"
 	author = "AlexEightch"
 	label = "DM01"
+	partime = 0
 
 	episode = clear
 	episode = "", "Interception III Deathmatch", "d"
@@ -15,6 +16,7 @@ map MAP02
 	levelname = "Disputed Territory I"
 	author = "AlexEightch"
 	label = "DM02"
+	partime = 0
 
 	next = "MAP03"
 }
@@ -24,6 +26,7 @@ map MAP03
 	levelname = "Disputed Territory II"
 	author = "AlexEightch"
 	label = "DM03"
+	partime = 0
 
 	next = "MAP04"
 }
@@ -33,6 +36,18 @@ map MAP04
 	levelname = "The Plutonium is Gone!"
 	author = "Bendza M."
 	label = "DM04"
+	partime = 0
+
+	next = "MAP05"
+}
+
+map MAP05
+{
+	levelname = "Iamfish"
+	author = "FlamingoGazzoline"
+	label = "DM05"
+	skytexture = "SKY-B06"
+	partime = 0
 
 	next = "MAP01"
 }

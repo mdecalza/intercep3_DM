@@ -11,6 +11,7 @@ Misc. Author Info       : The Interceptors are (in alphabetical order):
                           AlexEightch (DM lead, maps, testing)
                           Bendža M. (map)
                           Darman Macray (music)
+                          FlamingoGazzoline (map)
                           Lina (DECOHack, sprites)
                           Moustachio (DM lead, DECOHack, maps, art, testing)
                           PeccatumMihzamiz (ENDOOM)
@@ -30,7 +31,7 @@ Additional Credits to   : Darman Macray for bespoke title, text, and
 ===========================================================================
 * What is included *
 
-New levels              : 4
+New levels              : 5
 Sounds                  : Yes
 Music                   : Yes
 Graphics                : Yes
@@ -43,7 +44,7 @@ Other files required    :
 * Play Information *
 
 Game                    : Doom 2
-Map #                   : MAP01-MAP04
+Map #                   : MAP01-MAP05
 Single Player           : No
 Cooperative 2-4 Player  : No
 Deathmatch 2-4 Player   : Designed for

@@ -17,173 +17,45 @@ STORY TEXT 2    Story Theme from Interception by ForceTheDemo
 
 -= LEVELS =-
 
-E1M1: STATION TO STATION by Moustachio
- Music: "Diaphragm" by AD_79 (origin: AD_79 released MIDIs)
-
- Geometry: Moustachio
- Combat: Moustachio
- Detail: Moustachio
- Testing: Moustachio, DFF, valkiriforce, General Rainbow Bacon
-
-E1M3: CORPORATE HELL II by sincity2100
- Music: "TeNaciTy" by Jimmy
-
- Geometry: sincity2100
- Combat: sincity2100
- Detail: sincity2100
- Testing: sincity2100, Moustachio
-
-E1M4: DIE GARRISON by Yisue
- Music: "Bloody Skies" by Maxime Tondreau
-
- Geometry: Yisue
- Combat: Yisue
- Detail: Yisue
- Testing: Yisue, Moustachio
-
-E1M5: 220 KPA ABOVE AND BELOW by Frank Harper
- Music: "Prototype - Extended" by James Paddock and Stuart Rynn
-
- Geometry: Frank Harper
- Combat: Frank Harper
- Detail: Frank Harper
- Testing: Frank Harper, Moustachio
-
-E1S2: ARCH-DISTRICT by rafael_farofa
- Music: "Casserole" by LewkForce (origin: Interception II MAP20)
-
- Geometry: rafael_farofa
- Combat: rafael_farofa
- Detail: rafael_farofa
- Testing: rafael_farofa, Moustachio
-
-E2M1: FORCE MAJEURE by germicelli
- Music: * "cardsoundcard" by germicelli
-
- Geometry: germicelli
- Combat: germicelli
- Detail: germicelli
- Testing: germicelli, Moustachio
-
-E2M2: SUB-SEA TELEPORTER RESEARCH by AlexEightch
- Music: * "Statics" by AlexEightch
-
- Geometry: AlexEightch
- Combat: AlexEightch
- Detail: AlexEightch
- Testing: AlexEightch, Moustachio
-
-E2M3: BENTHIC REFINERY by Blast98
- Music: "Underground Lake" by Stuart Rynn (stewboy)
-
- Geometry: Blast98
- Combat: Blast98
- Detail: Blast98
- Testing: Blast98, Moustachio
-
-E2M4: HYDRO-COMPACTOR by FlamingoGazzoline
- Music: "InBrain" by FlamingoGazzoline
-
- Geometry: FlamingoGazzoline
- Combat: FlamingoGazzoline
- Detail: FlamingoGazzoline
- Testing: FlamingoGazzoline, Moustachio
-
-E2M5: NEPTUNE'S CASTLE by Bendža M.
- Music: "Engel" by Rammstein (origin: Sehnsucht)
-
- Geometry: Bendža M.
- Combat: Bendža M.
- Detail: Bendža M.
- Testing: Bendža M, ChaseDoesItRight, Moustachio
-
-E3M1: ELEFTHERIA by cannonball
- Music: "Dream Dweller" by Brayden Hart (AD_79)
-
- Geometry: cannonball
- Combat: cannonball
- Detail: cannonball
- Testing: cannonball, Moustachio
-
-E3M3: MANIFESTATION by sincity2100
- Music: "Kaguya" by Brayden Hart (AD_79) (origin: Akeldama MAP26)
-
- Geometry: sincity2100
- Combat: sincity2100
- Detail: sincity2100
- Testing: sincity2100, Moustachio
-
-E4M1: BURY PICASSO by FlamingoGazzoline
- Music: "Too Many Spaghetti" by FlamingoGazzoline
-
- Geometry: FlamingoGazzoline
- Combat: FlamingoGazzoline
- Detail: FlamingoGazzoline
- Testing: FlamingoGazzoline, Moustachio
-
-E4M2: DISPUTED TERRITORY by AlexEightch
- Music: In-progress
-
- Geometry: AlexEightch
- Combat: AlexEightch
- Detail: AlexEightch
- Testing: AlexEightch, Moustachio
-
-E5M1: TEMPEST SEPULCHER by Blast98
- Music: "Drunken Jesus" by James Paddock (Jimmy)
-
- Geometry: Blast98
- Combat: Blast98
- Detail: Blast98
- Testing: Blast98, Moustachio
-
-E5M3: TERMINATED BLISS by Treehouseminis
- Music: "Aquifer" by Snaxalotl (origin: Abscission MAP02)
-
- Geometry: Treehouseminis
- Combat: Treehouseminis
- Detail: Treehouseminis
- Testing: Treehouseminis, Moustachio
-
-E5S1: THE VOID HATES YOU by AlexEightch
+DM01: THE VOID HATES YOU by AlexEightch
  Music: "The Pyramid" by Thyrbse (origin: Hell Revealed 2 MAP28)
 
  Geometry: AlexEightch
  Combat: AlexEightch
  Detail: AlexEightch
- Testing: AlexEightch, Moustachio
+ Testing: AlexEightch, Moustachio, OldManHan
 
-E6M2: COSMIC FACTORY by Blast98
- Music: "Earthglow" by Tristan Clark
+DM02: DISPUTED TERRITORY I by AlexEightch
+ Music: * "TBD" by ???????
 
- Geometry: Blast98
- Combat: Blast98
- Detail: Blast98
- Testing: Blast98, Moustachio, AlexEightch
+ Geometry: AlexEightch
+ Combat: AlexEightch
+ Detail: AlexEightch
+ Testing: AlexEightch, Moustachio, OldManHan
 
-E6M3: MOONQUAKE by Salmon
- Music: "Main Code" by Korp
+DM03: DISPUTED TERRITORY II by AlexEightch
+ Music: "Weeping Circuits" by Jimmy (origin: TNT 2: Devilution)
 
- Geometry: Salmon
- Combat: Salmon
- Detail: Salmon
- Testing: Salmon, Moustachio
+ Geometry: AlexEightch
+ Combat: AlexEightch
+ Detail: AlexEightch
+ Testing: AlexEightch, Moustachio, OldManHan
 
-E6S1: THE PLUTONIUM IS GONE! by Bendža M.
+DM04: THE PLUTONIUM IS GONE! by Bendža M.
  Music: "Liquid Luck" by Jimmy (origin: BTSX)
 
  Geometry: Bendža M.
  Combat: Bendža M.
  Detail: Bendža M.
- Testing: Bendža M., Moustachio
+ Testing: Bendža M, AlexEightch, Moustachio, OldManHan
 
-BONUS: THE MUSEUM by Moustachio
- Music: "Casserole" by LewkForce (origin: Interception II MAP20)
+DM05: IAMFISH by FlamingoGazzoline
+ Music: "Oumaji" by FlamingoGazzoline
 
- Geometry: Moustachio
- Combat: Moustachio
- Detail: Moustachio
- Testing: Moustachio, DFF, valkiriforce, General Rainbow Bacon
+ Geometry: FlamingoGazzoline
+ Combat: FlamingoGazzoline
+ Detail: FlamingoGazzoline
+ Testing: FlamingoGazzoline, AlexEightch, Moustachio, OldManHan
 
 * This track was bespoke for Interception III.
 
@@ -247,46 +119,6 @@ BFG9000.1
   http://www.freesfx.co.uk
 
 Quick switching code adapted from Rowdy Rudy II Dehacked code by Doomkid.
-
-
--= ENEMIES =-
-
-INCENDIARY ZOMBIE
- DECOHack: Moustachio, Lina
- Sounds: id Software
- Sprites: Id Software, Eriance, 3D Realms
- Sprite Edit: ItsNatureToDie, neoworm, Captain Toenail, Xim, Ghastly_dragon,
-              scalliano
-
-PLASMA ZOMBIE
- DECOHack: Moustachio
- Sounds: id Software
- Sprites: id Software
- Sprite Edit: Ghastly Dragon, Xim, Fuzzballfox, Tormentor667, MagicWazard,
-              Moustachio
-
-ROCKET ZOMBIE
- DECOHack: Moustachio
- Sounds: Moustachio, id Software
- Sprites: id Software, the Skulltag Team
- Sprite Edit: DavidRaven, ItsNatureToDie (altdeath)
-
-FORMER TANK
- DECOHack: Moustachio
- Sounds: Rogue Entertainment, id Software, Moustachio
- Sprites: Id Software, 3D Realms
- Sprite Edit: Enjay, Moustachio
-
-GLIDING IMP
- DECOHack: Moustachio
- Sounds: id Software
- Sprites: Maelstrom, id Software
-
-SNAKE IMP
- DECOHack: Moustachio
- Sounds: id Software
- Sprites: Id Software, Raven Software
- Sprite Edit: Cyb, Vader, ItsNatureToDie
 
 
 -= HAZARDS =-
@@ -1734,3 +1566,4 @@ Doom Text Generator by eevee for CWILV lumps
 paint.net & SLADE 3.2.4 for Graphics
 FL Studio 20 & Audacity for sound fx
 Space Engine for Saturn render & size reference
+Odamex for multiplayer testing

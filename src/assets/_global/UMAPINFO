@@ -49,5 +49,16 @@ map MAP05
 	skytexture = "SKY-B06"
 	partime = 0
 
+	next = "MAP06"
+}
+
+map MAP06
+{
+	levelname = "E4M5DM"
+	author = "AlexEightch"
+	label = "DM06"
+	skytexture = "ALLBLACK"
+	partime = 0
+
 	next = "MAP01"
 }

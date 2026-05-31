@@ -60,5 +60,15 @@ map MAP06
 	skytexture = "ALLBLACK"
 	partime = 0
 
+	next = "MAP07"
+}
+
+map MAP07
+{
+	levelname = "Artifact Transfer"
+	author = "AlexEightch"
+	label = "DM07"
+	partime = 0
+
 	next = "MAP01"
 }
